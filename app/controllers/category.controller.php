@@ -2,7 +2,6 @@
 
 require_once './app/models/category.model.php';
 require_once './app/views/category.view.php';
-
 class categoryController{
     private $view;
     private $model;
@@ -51,8 +50,14 @@ class categoryController{
     }
 
     public function deleteCategory($id) {
-        $this->model->deleteCategoryById($id);
-        header("Location: " . BASE_URL . "show_categories");
+        $cantidad = $this->model->getProductsByCategory($id);
+        if($cantidad==0){
+            $this->model->deleteCategoryById($id);
+            header("Location: " . BASE_URL . "show_categories");
+        }
+        else{
+            $this->view->errorDeleteCategory($id);
+        }
     }
 
 
