@@ -41,6 +41,10 @@ class authController{
         header("Location: " . BASE_URL . "login");
     }
 
+    public function error404(){
+        $this->view->error404();
+    }
+
 }
 
 ?>

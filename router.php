@@ -87,6 +87,7 @@ switch ($params[0]) {
         $categoryController->showProductsByCategory($id);
         break;
     default:
-        echo('404 Page not found');
+        $authController = new authController();
+        $authController->error404();
         break;
 }
