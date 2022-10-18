@@ -50,14 +50,14 @@ class categoryController{
     }
 
     public function deleteCategory($id) {
-        $cantidad = $this->model->getProductsByCategory($id);
-        if($cantidad==0){
+        //$cantidad = $this->model->getProductsByCategory($id);
+        //if($cantidad>0){
             $this->model->deleteCategoryById($id);
             header("Location: " . BASE_URL . "show_categories");
-        }
-        else{
-            $this->view->errorDeleteCategory($id);
-        }
+        //}
+        //else if(cantidad==0){
+        //    $this->view->errorDeleteCategory($id);
+        //}
     }
 
 

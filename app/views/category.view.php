@@ -23,9 +23,10 @@ class categoryView{
         $this->smarty->display('show_products_by_category.tpl');
     }
 
-    public function errorDeleteCategory($id){
+    /* public function errorDeleteCategory($id){
         $this->smarty->display('error.tpl');
     }
+    */
 
 }
 
